@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% block title %}
+ Thank you
+{% endblock %}
+{% block content %}
+ <h1>Thank you</h1>
+ <p>Your order has been successfully completed. Your order number is
+ <strong>{{ order.id }}</strong>.</p>
+
+<p id = "result"></p>
+<button onclick = "redirect()">Zurück zur Startseite</button>
+<script>
+   function redirect () {
+      setTimeout(myURL, 1000);
+      var result = document.getElementById("result");
+      result.innerHTML = "<b> you will be redirected in 1 second";
+   }
+
+   function myURL() {
+      document.location.href = "/";
+   }
+</script>
+{% endblock %}
